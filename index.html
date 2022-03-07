@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>WebVR fun</title>
+    <script src="https://aframe.io/releases/1.3.0/aframe.min.js"></script>
+  </head>
+  <body>
+    <script type="module" src="/src/main.js"></script>
+    <a-scene>
+      <a-assets>
+        <a-asset-item id="Button" src="/button/models/Button.gltf"></a-asset-item>
+        <a-asset-item id="ButtonBase" src="/button/models/ButtonBase.gltf"></a-asset-item>
+        <a-asset-item id="Cable" src="/button/models/Cable.gltf"></a-asset-item>
+        <a-asset-item id="LightBulb" src="/button/models/LightBulb.gltf"></a-asset-item>
+        <a-asset-item id="Room" src="/button/models/Room.gltf"></a-asset-item>
+      </a-assets>
+
+      <a-entity
+        id="#Button"
+        gltf-model="#Button"
+        scale="1 1 1"
+        position="2.299999952316284 1.4741144180297852 4.050000190734863"
+        visible="true"
+        shadow="cast: false"
+      >
+      </a-entity>
+      <a-entity
+        id="#ButtonBase"
+        gltf-model="#ButtonBase"
+        scale="1 1 1"
+        position="2.4200000762939453 1.600000023841858 4.050000190734863"
+        visible="true"
+        shadow="cast: false"
+      >
+      </a-entity>
+      <a-entity
+        id="#Cable"
+        gltf-model="#Cable"
+        scale="1 1 1"
+        position="1.75 3.284722328186035 0.6000000834465027"
+        visible="true"
+        shadow="cast: false"
+      ></a-entity>
+      <a-entity
+        id="#LightBulb"
+        gltf-model="#LightBulb"
+        scale="1 1 1"
+        position="5.84963437688657e-08 4.5 4.8350603520930235e-08"
+        visible="true"
+        shadow="cast: true"
+      ></a-entity>
+      <a-entity
+        id="#Room"
+        gltf-model="#Room"
+        scale="1 1 1"
+        position="0.0 2.5 -0.0"
+        visible="true"
+        shadow="cast: false"
+      ></a-entity>
+    </a-scene>
+  </body>
+</html>
