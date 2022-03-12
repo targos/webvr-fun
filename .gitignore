@@ -102,3 +102,11 @@ dist
 
 # TernJS port file
 .tern-port
+
+# Blender save files
+*.blend*
+!*.blend
+
+# aframe_blender_exporter junk
+env/
+media/

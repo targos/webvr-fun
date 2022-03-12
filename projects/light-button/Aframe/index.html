@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="en">
+<!-- Generated automatically by AFRAME Exporter for Blender - https://silverslade.itch.io/a-frame-blender-exporter -->
+
+<head>
+    <title>WebXR Application</title>
+    <link rel="icon" type="image/png" href="favicon.ico" />
+    <meta name="description" content="3D Application">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="https://aframe.io/releases/1.2.0/aframe.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/donmccurdy/aframe-extras@v6.1.0/dist/aframe-extras.min.js"></script>
+    <script type="text/javascript" src="js/webxr.js"></script>
+    <script type="text/javascript" src="js/joystick.js"></script>
+    <script type="text/javascript" src="js/camera-cube-env.js"></script>
+
+    <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+
+<body onload="init();">
+    <a-scene shadow="type: basic; autoUpdate: false;"
+        renderer="antialias: false; colorManagement: false; physicallyCorrectLights: false;">
+        <!-- Assets -->
+        <a-assets>
+            <a-asset-item id="Button" src="./assets/Button.gltf"></a-asset-item>
+            <a-asset-item id="ButtonBase" src="./assets/ButtonBase.gltf"></a-asset-item>
+            <a-asset-item id="Cable" src="./assets/Cable.gltf"></a-asset-item>
+            <a-asset-item id="LightBulb" src="./assets/LightBulb.gltf"></a-asset-item>
+            <a-asset-item id="Room" src="./assets/Room.gltf"></a-asset-item>
+            <img id="sky" src="./resources/sky.jpg">
+            <img id="icon-play" src="./resources/play.png">
+            <img id="icon-pause" src="./resources/pause.png">
+            <img id="icon-play-skip-back" src="./resources/play-skip-back.png">
+            <img id="icon-mute" src="./resources/mute.png">
+            <img id="icon-volume-low" src="./resources/volume-low.png">
+            <img id="icon-volume-high" src="./resources/volume-high.png">
+        </a-assets>
+
+        <!-- Entities -->
+
+        <a-entity id="#Button" gltf-model="#Button" scale="1 1 1"
+            position="2.299999952316284 1.4741144180297852 4.050000190734863" visible="true" shadow="cast: false">
+        </a-entity>
+        <a-entity id="#ButtonBase" gltf-model="#ButtonBase" scale="1 1 1"
+            position="2.4200000762939453 1.600000023841858 4.050000190734863" visible="true" shadow="cast: false">
+        </a-entity>
+        <a-entity id="#Cable" gltf-model="#Cable" scale="1 1 1" position="1.75 3.284722328186035 0.6000000834465027"
+            visible="true" shadow="cast: false"></a-entity>
+        <a-entity id="#LightBulb" gltf-model="#LightBulb" scale="1 1 1"
+            position="5.84963437688657e-08 4.5 4.8350603520930235e-08" visible="true" shadow="cast: true"></a-entity>
+        <a-entity id="#Room" gltf-model="#Room" scale="1 1 1" position="0.0 2.5 -0.0" visible="true"
+            shadow="cast: false"></a-entity>
+
+        <!-- Camera -->
+        <a-entity id="player" position="0 -0.2 0" movement-controls="speed: 0.10000000149011612;">
+            <a-entity id="camera" camera="near: 0.001" position="0 1.7000000476837158 0"
+                look-controls="pointerLockEnabled: true">
+                <a-entity id="cursor" cursor="fuse: false;"
+                    animation__click="property: scale; startEvents: click; easing: easeInCubic; dur: 50; from: 	0.1 0.1 0.1; to: 1 1 1"
+                    position="0 0 -0.1" geometry="primitive: circle; radius: 0.001;"
+                    material="color: #CCC; shader: flat;">
+                </a-entity>
+            </a-entity>
+            <a-entity id="leftHand" oculus-touch-controls="hand: left" vive-controls="hand: left"></a-entity>
+            <a-entity id="rightHand" laser-controls oculus-touch-controls="hand: right" vive-controls="hand: right">
+            </a-entity>
+        </a-entity>
+
+        <!-- Lights -->
+        <a-entity light="type: spot; angle: 45; penumbra: 0.5; color: #FFF; intensity: .5" position="0 3.5 0"
+            rotation="90 0 0"></a-entity>
+        <a-entity light="type: spot; angle: 45; penumbra: 0.5; color: #FFF; intensity: 1" position="0 3.5 0"
+            rotation="-90 0 0"></a-entity>
+
+        <a-entity light="type: point; color: #FFF; intensity: .5" position="0 3.5 0"></a-entity>
+
+
+
+        <!-- Sky -->
+        <a-sky color="#ECECEC"></a-sky>
+    </a-scene>
+</body>
+
+</html>
+<!-- Generated automatically by AFRAME Exporter for Blender - https://silverslade.itch.io/a-frame-blender-exporter -->
